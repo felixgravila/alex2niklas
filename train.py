@@ -234,7 +234,7 @@ def prepare(name:str):
     Returns one hot vector ready for the model
     """
     n = chars_to_numbers(name)
-    n = pad_to(10)(n)
+    n = pad_to(n)
     n = tf.one_hot(n, END_TOK+1)
     n = tf.expand_dims(n, 0)
     return n
